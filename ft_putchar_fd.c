@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gchauvot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 12:16:46 by gchauvot          #+#    #+#             */
-/*   Updated: 2024/05/17 12:16:48 by gchauvot         ###   ########.fr       */
+/*   Created: 2024/05/20 10:51:13 by gchauvot          #+#    #+#             */
+/*   Updated: 2024/05/20 10:51:15 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned int n)
-{
-	unsigned int	i;
+#include <stdlib.h>
+#include <unistd.h>
 
-	i = 0;
-	while (i < n)
-	{
-		*(unsigned char *)(s + i) = c;
-		i++;
-	}
-	return (s);
+void ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }

@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-void	*calloc(unsigned int nemb, unsigned int size)
+void	*ft_calloc(unsigned int nemb, unsigned int size)
 {
 	unsigned int	i;
 	void			*array;
@@ -23,7 +23,7 @@ void	*calloc(unsigned int nemb, unsigned int size)
 		return (0);
 	while (i < size)
 	{
-		array[i] = 0;
+		*(unsigned char *)(array + i) = 0;
 		i++;
 	}
 	return (array);

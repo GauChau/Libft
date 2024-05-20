@@ -17,7 +17,7 @@ int	ftmin(int x, int y)
 	return (y);
 }
 
-int	ft_strlen(const char *str)
+unsigned int	ft_strlen(const char *str)
 {
 	int	i;
 

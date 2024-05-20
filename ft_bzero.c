@@ -9,16 +9,15 @@
 /*   Updated: 2024/05/17 12:16:48 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void	*ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *s, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n)
 	{
-		s[i] = '\0';
+		*(unsigned char *)(s + i) = 0;
 		i++;
 	}
-	return ;
+	return (0);
 }

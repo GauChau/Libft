@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -22,20 +22,20 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	isset(char s1, char *s2)
+int	isset(const char s1, const char *s2)
 {
 	int	i;
 
 	i = 0;
 	while (s2[i] != '\0')
 	{
-		if (s1 == s2[i]);
+		if (s1 == s2[i])
 			return (1);
 		i++;
 	}
 	return (0);
 }
-int	ft_newlen(char *s1, char *s2)
+int	ft_newlen(const char *s1, const char *s2)
 {
 	int	i;
 	int	len;
@@ -65,7 +65,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	array = (char *)malloc((j) * sizeof(char));
 	if (!array)
 		return (0);
-	while (isset(s1[i], s2))
+	while (isset(s1[i], set))
 		i++;
 	while (u < j)
 	{

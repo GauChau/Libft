@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gchauvot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,15 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned int n)
+
+int	memcmp(const void *s1, const void *s2, size_t n)
+
 {
 	unsigned int	i;
 
 	i = 0;
 	while (i < n)
 	{
-		*(unsigned char *)(s + i) = c;
+		if (*(unsigned char *)(s + i) == (unsigned char)(c))
+		{
+			return ((void*)(s + i));
+		}
 		i++;
 	}
-	return (s);
+	return (0);
 }

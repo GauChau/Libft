@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strnstr(const char *big, const char *little, unsigned int len)
+const char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 {
 	unsigned int	i;
 	unsigned int	j;

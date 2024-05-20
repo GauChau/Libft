@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -20,7 +20,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*strrchr(const char *s, int c)
+const char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 int	cword(char const *s, char c)
 {
 	int	i;
@@ -30,10 +32,10 @@ int	cword(char const *s, char c)
 				word = 0;
 		
 	}
-	return (count)
+	return (count);
 }
 
-unsigned int	ft_strlenb(char *str,c char c)
+unsigned int	ft_strlenb(const char *str, char c)
 {
 	unsigned int	i;
 
@@ -89,5 +91,5 @@ char **ft_split(char const *s, char c)
 			word = 0;
 		i++;
 	}
-	return (array)
+	return (array);
 }
