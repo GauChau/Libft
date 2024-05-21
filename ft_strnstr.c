@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-const char	*ft_strnstr(const char *big, const char *little, unsigned int len)
+char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -19,8 +19,8 @@ const char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 	i = 0;
 	j = 0;
 	if (little[0] == '\0')
-		return (big);
-	while (big[i] != '\0' && i < len)
+		return ((char*)big);
+	while ((big[i] != '\0') && (i < len))
 	{
 		if (big[i] == little[j])
 		{
@@ -31,7 +31,7 @@ const char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 		else
 			j = 0;
 		if (little[j] == '\0')
-			return (&big[point]);
+			return ((char*)&big[point]);
 		i++;
 	}
 	return (0);

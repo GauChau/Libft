@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -21,5 +21,7 @@ char	*strchr(const char *s, int c)
 			return (((char*) (&s[i])));
 		i++;
 	}
+	if (s[i] == c)
+			return (((char*) (&s[i])));
 	return (0);
 }
