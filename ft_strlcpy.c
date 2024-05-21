@@ -25,7 +25,7 @@ unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int siz)
 	unsigned int	i;
 
 	i = 0;
-	while (i < siz)
+	while (i + 1 < siz && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;

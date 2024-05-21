@@ -11,39 +11,61 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-int size(int n)
+long	size(long n)
 {
-	int	i;
+	long	i;
 
 	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		i++;
+		n = -n;
+	}
 	while (n > 0)
 	{	
 		n /= 10;
 		i++;
 	}
-	if (n<0)
-		i++;
 	return (i);
 }
 
-char *ft_itoa(int n)
+long	ft_dash(long nb, char *array)
 {
-	int len;
-	char *array;
+	if (nb < 0)
+	{
+		array[0] = '-';
+		nb = -1 * nb;
+	}
+	return (nb);
+}
 
+char	*ft_itoa(int n)
+{
+	long	len;
+	long	nb;
+	char	*array;
+
+	len = 0;
 	len = size(n);
-	array = (char *)malloc((len + 1 ) * sizeof(char));
+	nb = (long)n;
+	array = (char *)malloc((len + 1) * sizeof(char));
 	if (!array)
 		return (0);
-	if (n < 0)
-		array[0] = '-';
-	array[len--] = '\0';
-	while (array[len] != '-' && len >= 0)
+	nb = ft_dash(nb, array);
+	array[len] = '\0';
+	if (len >= 1)
+		len--;
+	while (len >= 0)
 	{
-		array[len] = n % 10;
-		n = n/10;
-		len --;
+		if (n < 0 && len == 0)
+			break ;
+		array[len] = (nb % 10) + '0';
+		nb = nb / 10;
+		len--;
 	}
 	return (array);
 }

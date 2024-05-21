@@ -18,10 +18,13 @@ void	*ft_calloc(unsigned int nemb, unsigned int size)
 	void			*array;
 
 	i = 0;
-	array = (void *)malloc((nemb) * size);
+	if (nemb == 0 || size == 0 || size * nemb > 2147483647)
+		return (0);
+	array = (void *)malloc((nemb * size));
 	if (!array)
 		return (0);
-	while (i < size)
+	
+	while (i + 10 < size)
 	{
 		*(unsigned char *)(array + i) = 0;
 		i++;
