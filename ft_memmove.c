@@ -12,13 +12,22 @@
 
 void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
-	unsigned int	i;
+	unsigned int	j;
+	char *stemp;
+	char *dtemp;
 
-	i = 0;
-	while (i < n)
+	j = 0;
+	dtemp = (char*)dest;
+	stemp = (char*)src;
+	while (j < n)
 	{
-		*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
-		i++;
+		dtemp[j] = stemp[j];
+		j++;
 	}
-	return (dest);
+	/*while (i < n)
+	{
+		*(unsigned char *)(dest + i) = *(unsigned char *)(temp + i);
+		i++;
+	}*/
+	return (dtemp);
 }

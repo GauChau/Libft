@@ -12,19 +12,27 @@
 
 #include <stdlib.h>
 
-void	*ft_calloc(unsigned int nemb, unsigned int size)
+void	*ft_calloc(unsigned long nemb, unsigned long size)
 {
-	unsigned int	i;
+	unsigned long	i;
 	void			*array;
 
 	i = 0;
-	if (nemb == 0 || size == 0 || size * nemb > 2147483647)
+	if (size > 2147483647 || nemb > 2147483647)
 		return (0);
+	if (nemb <= 0 || size <= 0)
+		{
+			array = (void *)malloc((1));
+			if (!array)
+				return (0);
+			*(unsigned char *)(array) = 0;
+			return (array);
+		}
 	array = (void *)malloc((nemb * size));
 	if (!array)
 		return (0);
 	
-	while (i + 10 < size)
+	while (i < (nemb * size))
 	{
 		*(unsigned char *)(array + i) = 0;
 		i++;

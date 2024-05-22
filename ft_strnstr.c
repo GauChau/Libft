@@ -9,6 +9,7 @@
 /*   Updated: 2024/02/15 13:27:57 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
 char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 {
@@ -18,20 +19,20 @@ char	*ft_strnstr(const char *big, const char *little, unsigned int len)
 
 	i = 0;
 	j = 0;
+	point = 0;
 	if (little[0] == '\0')
 		return ((char*)big);
-	while ((big[i] != '\0') && (i < len))
+	while (big[i] != '\0' && i < len)
 	{
-		if (big[i] == little[j])
+		if (big[i] == little[0])
 		{
-			if (j == 0)
-				point = i;
-			j++;
-		}
-		else
+			point = i;
 			j = 0;
-		if (little[j] == '\0')
-			return ((char*)&big[point]);
+			while (big[i+j] == little [j] && big[i+j] != '\0' && i+j<len)
+				j++;
+			if (little[j] == '\0')
+				return ((char*)&big[point]);		
+		}
 		i++;
 	}
 	return (0);

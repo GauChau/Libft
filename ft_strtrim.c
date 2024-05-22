@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
+#include <stdio.h>
 int	ft_strlen(const char *str)
 {
 	int	i;
@@ -22,34 +22,37 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-int	isset(const char s1, const char *s2)
+int	isset(const char src, const char *set)
 {
 	int	i;
 
 	i = 0;
-	while (s2[i] != '\0')
+	while (set[i] != '\0')
 	{
-		if (s1 == s2[i])
+		if (src == set[i])
 			return (1);
 		i++;
 	}
 	return (0);
 }
-int	ft_newlen(const char *s1, const char *s2)
+int	ft_newlen(const char *src, const char *set)
 {
 	int	i;
 	int	len;
+	int j;
 
 	i = 0;
-	len = ft_strlen(s1) - 1;
-	while (isset(s1[i], s2))
+	len = ft_strlen(src);
+	while (isset(src[i], set))
 		i++;
-	while (isset(s1[len], s2) && len >= 0)
+	j = i;
+	while (isset(src[len-1], set) && len > j)
 	{
 		len--;
 		i++;
 	}
-	return (i);
+	//printf("len: %d i: %d j: %d\n",ft_strlen(src)-i, i, j);
+	return (ft_strlen(src)-i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -61,19 +64,28 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	u = 0;
-	j = ft_newlen(s1, set) + 1;
+	j = ft_newlen(s1, set)+1;
 	array = (char *)malloc((j) * sizeof(char));
 	if (!array)
 		return (0);
 	while (isset(s1[i], set))
 		i++;
-	while (u < j)
+	while (u < j-1)
 	{
 		array[u] = s1[i];
 		u++;
 		i++;
+		
 	}
+	//printf("u: %d i: %d j: %d\n", u ,i, j);
 	array[u] = '\0';
 	return(array);
 }
-
+/*
+int main (void)
+{
+	char *burp;
+	burp=ft_strtrim("   xxxtripouille", " x");
+	printf("test: %s", burp);
+	return (0);
+}*/
