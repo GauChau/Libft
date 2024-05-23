@@ -18,10 +18,10 @@
 
 unsigned int		ft_strlcat(char *dst, const char *src, unsigned int siz);
 unsigned int		ft_strlcpy(char *dst, const char *src, unsigned int siz);
-unsigned int		ft_strlen(char *str);
+unsigned int		ft_strlen(const char *str);
 int					ft_atoi(const char *nptr);
 void				*ft_bzero(void *s, size_t n);
-void				*ft_calloc(unsigned int nemb, unsigned int size);
+void				*ft_calloc(size_t nemb, size_t size);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
@@ -43,7 +43,7 @@ char				*ft_strdup(const char *s);
 void				ft_striteri(char *s, void (*f)(unsigned int, char*));
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-int					ft_strncmp(char *s1, char *s2, unsigned int n);
+int					ft_strncmp(const char *s1,const char *s2, unsigned int n);
 char				*ft_strnstr(const char *big, const char *little, unsigned int len);
 const char			*ft_strrchr(const char *s, int c);
 char				*ft_strtrim(char const *s1, char const *set);
