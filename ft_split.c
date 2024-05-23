@@ -46,7 +46,7 @@ unsigned int	ft_strlenb(const char *str, char c)
 	return (i);
 }
 
-char *strdupb(const char *s, char c)
+char	*strdupb(const char *s, char c)
 {
 	unsigned int	i;
 	unsigned int	len;
@@ -54,8 +54,6 @@ char *strdupb(const char *s, char c)
 
 	i = 0;
 	len = ft_strlenb(s, c);
-	//printf("%d ", len);
-	//printf("%c ", '\n');
 	array = (char *)malloc((len + 1) * sizeof(char));
 	if (!array)
 		return (0);
@@ -68,22 +66,19 @@ char *strdupb(const char *s, char c)
 	return (array);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **array;
 	unsigned int	i;
 	unsigned int	j;
-	int	word;
+	char			**array;
+	int				word;
 
 	i = 0;
 	j = 0;
 	word = 0;
-	//printf("%d ", (cword(s,c)));
-	//printf("%c ", '\n');
-	array = (char **)malloc((cword(s,c) + 1) * sizeof(char*));
+	array = (char **)malloc((cword(s, c) + 1) * sizeof(char *));
 	if (!array)
 		return (0);
-		
 	while (s[i] != '\0')
 	{	
 		if (word == 0 && s[i] != c)
@@ -99,14 +94,3 @@ char **ft_split(char const *s, char c)
 	array[j] = '\0';
 	return (array);
 }
-/*
-int main (void)
-{
-	
-	char **res;
-
-	res = ft_split(" bro s1ta t1ic", ' ');
-	printf("%s", res[2]);
-	free(res);
-	return(0);
-}*/

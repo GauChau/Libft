@@ -21,7 +21,7 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	unsigned int	i;
 	unsigned int	len;
@@ -40,4 +40,3 @@ char *ft_strdup(const char *s)
 	array[i] = '\0';
 	return (array);
 }
-

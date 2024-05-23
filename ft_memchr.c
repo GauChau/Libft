@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 void	*ft_memchr(const void *s, int c, unsigned int n)
 
 {
@@ -21,7 +20,7 @@ void	*ft_memchr(const void *s, int c, unsigned int n)
 	{
 		if (*(unsigned char *)(s + i) == (unsigned char)(c))
 		{
-			return ((void*)(s + i));
+			return ((void *)(s + i));
 		}
 		i++;
 	}

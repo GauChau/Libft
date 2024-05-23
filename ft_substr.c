@@ -34,7 +34,7 @@ char	*ft_substr(char const *s, unsigned int start, unsigned int len)
 		len = 0;
 	else if (len > ft_strlen(&s[start]))
 		len = ft_strlen(&s[start]);
-	array = (char*)malloc((len + 1)* sizeof(char));
+	array = (char *)malloc((len + 1) * sizeof(char));
 	if (!array)
 		return (0);
 	while (i < len && s[j] != '\0')
