@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-unsigned int	ft_strlen(const char *str)
+static unsigned int	ft_strlen(const char *str)
 {
 	unsigned int	i;
 

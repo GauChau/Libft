@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include <stdlib.h>
 
-int	ft_strlen(const char *str)
+static int	ft_strlen(const char *str)
 {
 	int	i;
 

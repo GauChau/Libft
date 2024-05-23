@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	ft_strlen(const char *str)
+static int	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-int	isset(const char src, const char *set)
+static int	isset(const char src, const char *set)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ int	isset(const char src, const char *set)
 	return (0);
 }
 
-int	ft_newlen(const char *src, const char *set)
+static int	ft_newlen(const char *src, const char *set)
 {
 	int	i;
 	int	len;

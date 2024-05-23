@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	cword(char const *s, char c)
+static int	cword(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -36,7 +36,7 @@ int	cword(char const *s, char c)
 	return (count);
 }
 
-unsigned int	ft_strlenb(const char *str, char c)
+static unsigned int	ft_strlenb(const char *str, char c)
 {
 	unsigned int	i;
 
@@ -46,7 +46,7 @@ unsigned int	ft_strlenb(const char *str, char c)
 	return (i);
 }
 
-char	*strdupb(const char *s, char c)
+static char	*strdupb(const char *s, char c)
 {
 	unsigned int	i;
 	unsigned int	len;

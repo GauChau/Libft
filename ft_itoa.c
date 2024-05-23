@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-long	size(long n)
+static long	size(long n)
 {
 	long	i;
 
@@ -33,7 +33,7 @@ long	size(long n)
 	return (i);
 }
 
-long	ft_dash(long nb, char *array)
+static long	ft_dash(long nb, char *array)
 {
 	if (nb < 0)
 	{
