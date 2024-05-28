@@ -11,16 +11,17 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <libft.h>
 
-void	*ft_calloc(unsigned long nemb, unsigned long size)
+void	*ft_calloc(size_t nemb, size_t size)
 {
-	unsigned long	i;
-	void			*array;
+	size_t	i;
+	void	*array;
 
 	i = 0;
 	if (size > 2147483647 || nemb > 2147483647)
 		return (0);
-	if (nemb <= 0 || size <= 0)
+	if ((int)nemb <= 0 && (int)size <= 0)
 	{
 		array = (void *)malloc((1));
 		if (!array)

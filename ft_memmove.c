@@ -9,23 +9,21 @@
 /*   Updated: 2024/05/17 12:16:48 by gchauvot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <libft.h>
 
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned int	i;
-	unsigned char	*stemp;
-	unsigned char	*dtemp;
 
 	i = 0;
-	dtemp = (unsigned char *)dest;
-	stemp = (unsigned char *)src;
-	if (dtemp > stemp)
+	if (!n)
+		return (dest);
+	if (!dest && !src)
+		return (NULL);
+	if (dest > src)
 	{
-		while (n > 0)
-		{
-			n--;
+		while (n-- > 0)
 			*(unsigned char *)(dest + n) = *(unsigned char *)(src + n);
-		}
 		*(unsigned char *)(dest + 0) = *(unsigned char *)(src + 0);
 	}
 	else
@@ -36,5 +34,5 @@ void	*ft_memmove(void *dest, const void *src, unsigned int n)
 			i++;
 		}
 	}
-	return (dest);
+	return ((void *)dest);
 }

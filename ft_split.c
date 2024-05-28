@@ -66,6 +66,23 @@ static char	*strdupb(const char *s, char c)
 	return (array);
 }
 
+static char	**free_tab(char **tab, char *secu, int j)
+{
+	size_t	i;
+
+	i = 0;
+	if (!secu)
+	{
+		tab[j] = '\0';
+	}
+	while (tab[i])
+	{
+		free(tab[i++]);
+	}
+	free(tab);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	unsigned int	i;
@@ -81,15 +98,14 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	while (s[i] != '\0')
 	{	
-		if (word == 0 && s[i] != c)
+		if (word++ == 0 && s[i] != c)
 		{
 			array[j] = strdupb(&s[i], c);
-			word = 1;
-			j++;
+			if (!array[j++])
+				return (free_tab(array, array[j], j));
 		}
-		if (s[i] == c)
+		if (s[i++] == c)
 			word = 0;
-		i++;
 	}
 	array[j] = '\0';
 	return (array);
